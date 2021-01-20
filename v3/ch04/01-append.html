@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../lib/v3/d3.min.js"></script>
+</head>
+
+<body>
+  <p>Apple</p>
+  <p id="myid">Pear</p>
+  <p>Banana</p>
+  <script>
+    var body = d3.select("body");
+    // 在 body 的末尾添加一个 p 元素
+    body.append("p")
+      .text("append p element");
+
+    // 在 body 中 id 为 myid 的元素前添加一个段落元素。
+    body.insert("p", "#myid")
+      .text("insert p element");
+
+    var p = body.select("#myid");
+    // 删除一个元素时，对于选择的元素，使用 remove 即可
+    p.remove();
+  </script>
+</body>
+
+</html>
