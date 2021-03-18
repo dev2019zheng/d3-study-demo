@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="../lib/v3/d3.min.js"></script>
-  </head>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <script src="../../lib/v3/d3.min.js"></script>
+</head>
 
-  <body>
-    <p></p>
-    <p></p>
-    <p></p>
-    <script>
-      var dataset = [2];
-      var p = d3.select('body').selectAll('p');
+<body>
+<p></p>
+<p></p>
+<p></p>
+<script>
+var dataset = [2];
+var p = d3.select('body').selectAll('p');
 
-      const update = p.data(dataset);
+const update = p.data(dataset);
 
-      const exit = update.exit();
+const exit = update.exit();
 
-      update.text(function (d, i) {
-        return 'update ' + d;
-      });
+update.text(function (d, i) {
+  return 'update ' + d;
+});
 
-      // exit部分的处理通常是删除元素
-      // exit.remove();
-      exit
-        .text(function (d, i) {
-          return 'exit';
-        })
-        .style('background', 'red');
-    </script>
-  </body>
+// exit部分的处理通常是删除元素
+// exit.remove();
+exit
+  .text(function (d, i) {
+    return 'exit';
+  })
+  .style('background', 'red');
+</script>
+</body>
 </html>
